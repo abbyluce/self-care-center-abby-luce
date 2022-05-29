@@ -4,26 +4,37 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
-
-  <body>
+  <body onload="pageLoad()">
+    <div class="login-container">
+      <label for="name"><h2>Hello! What is your name?</h2></label>
+      <input class="name" placeholder="Your name" id="name-form" type="text"/>
+      <input type="submit" value="Submit" class="button" id="submit-name-button">
+      <label>
+    </div>
+    <div class="main-page">
     <h1 class="self-care-center">&#10024; Self Care Center &#10024;</h1>
     <h2 class="type-of-message">Which type of message?</h2>
-  <section class="message">
-    <div class="form-and-button">
-        <form class="message-selection">
-          <input type="radio" id="affirmation" name="message-type" value="affirmation">
-          <label for="affirmation">affirmation</label>
-          <input type="radio" id="mantra" name="message-type" value="mantra">
-          <label for="mantra">mantra</label>
-          <br>
-          <input type="submit" value="Receive Message" class="button">
-        </form>
-      </div>
-    </section>
-    <section class="display-received-message">
-      <img class="icon" id="icon-1" src="assets/meditate.svg" alt="icon">
-    </section>
-
+      <section class="message">
+        <div class="form-and-button">
+          <form class="message-selection">
+            <input type="radio" id="affirmation" name="message-type" value="affirmation">
+            <label for="affirmation" class="affirmation">affirmation</label>
+            <input type="radio" id="mantra" name="message-type" value="mantra">
+            <label for="mantra" class="mantra">mantra</label>
+            <br>
+            <input type="submit" value="Receive Message" class="button" id="receive-message-button">
+          </form>
+        </div>
+      </section>
+    <div class="display-area">
+      <section class="display-received-message">
+        <p></p>
+        <img class="icon" id="icon-1" src="assets/meditate.svg" alt="icon">
+      </section>
+    </div>
+    <button class="clear-button hidden" id="clear-message-button">Clear Message</button>
+  </div>
     <script type="text/javascript" src="main.js"></script>
+    <script src="./assets/data.js"></script>
   </body>
 </html>
