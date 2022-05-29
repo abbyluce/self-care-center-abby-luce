@@ -1,4 +1,3 @@
-var mainHeading = document.querySelector(".self-care-center");
 var subHeading = document.querySelector(".type-of-message");
 var affirmationButton = document.querySelector("#affirmation");
 var mantraButton = document.querySelector("#mantra");
@@ -9,7 +8,7 @@ var clearMessageButton = document.querySelector(".clear-button");
 var loginPage = document.querySelector(".login-container");
 var mainPage = document.querySelector(".main-page");
 var loginButton = document.querySelector("#submit-name-button");
-var name = document.getElementById("name-form");
+var name = document.querySelector(".name-form");
 
 receiveMessageButton.addEventListener('click', clickReceiveMessageButton);
 clearMessageButton.addEventListener('click', clickClearMessageButton);
@@ -17,16 +16,13 @@ loginButton.addEventListener('click', clickLoginButton);
 
 function pageLoad() {
   mainPage.classList.add('hidden');
-}
+};
 
 function clickLoginButton() {
   mainPage.classList.remove('hidden');
   loginPage.classList.add('hidden');
-  var userName = name.value;
-  subHeading.innerHTML = `Hello, ${userName}!, which type of message would you like?`;
-  console.log(name);
-  console.log(name.value);
-}
+  // subHeading.innerHTML = `Hello, ${name.value}!, which type of message would you like?`;
+};
 
 function clickReceiveMessageButton(event) {
   event.preventDefault();
@@ -38,17 +34,16 @@ function clickReceiveMessageButton(event) {
     clearMessageButton.classList.remove('hidden');
     icon.style.display='none';
     showMantra();
-  }
-  else {
+  } else {
     alert("You forgot to select an option!");
   }
-}
+};
 
 function showAffirmation() {
   displayReceivedMessage.innerHTML = '';
   var affirmationIndex = Math.floor(Math.random() * affirmationsArray.length);
   var affirmation = affirmationsArray[affirmationIndex];
-  displayReceivedMessage.innerText = `${affirmation}`
+  displayReceivedMessage.innerText = `${affirmation}`;
 };
 
 function showMantra() {
